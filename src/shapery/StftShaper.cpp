@@ -39,7 +39,7 @@ void StftShaper::shape(Essentia &essentia) {
     if (inputSignals.size() < windowSize / hopSize) {
         // waiting to have enough seedlings to operate on
         // generate some null signals to allow future shapers to work
-        inputSignals.push_back(essentia.getSignal(EQUALIZED));
+        inputSignals.push_back(essentia.getSignal(SEEDLING));
 
         auto realSignal = std::make_unique<Signal>(stftSize);
         realSignal->populate(0);
@@ -49,10 +49,13 @@ void StftShaper::shape(Essentia &essentia) {
         imaginarySignal->populate(0);
         essentia.setSignal(STFT_IMAGINARY, move(imaginarySignal));
 
+        auto magnitudeSignal = std::make_unique<Signal>(stftSize);
+        magnitudeSignal->populate(0);
+        essentia.setSignal(STFT_MAGNITUDE, move(magnitudeSignal));
         return;
     } else {
         inputSignals.pop_front();
-        inputSignals.push_back(essentia.getSignal(EQUALIZED));
+        inputSignals.push_back(essentia.getSignal(SEEDLING));
     }
 
     // perform windowing
@@ -79,17 +82,23 @@ void StftShaper::shape(Essentia &essentia) {
 
     auto realSignal = std::make_unique<Signal>(stftSize);
     auto imaginarySignal = std::make_unique<Signal>(stftSize);
+    auto magnitudeSignal = std::make_unique<Signal>(stftSize);
     for (int i = 0; i < stftSize; i++) {
 #ifdef USE_MUFFT
         realSignal->addSample(fftOutput[i].real);
         imaginarySignal->addSample(fftOutput[i].imag);
+        magnitudeSignal->addSample(static_cast<float>(std::sqrt(
+                std::pow(fftOutput[i].real, 2) + std::pow(fftOutput[i].imag, 2))));
 #else
         realSignal->addSample(fftOutput[i].r);
         imaginarySignal->addSample(fftOutput[i].i);
+        magnitudeSignal->addSample(static_cast<float>(std::sqrt(
+                std::pow(fftOutput[i].r, 2) + std::pow(fftOutput[i].i, 2))));
 #endif // USE_MUFFT
     }
     essentia.setSignal(STFT_REAL, move(realSignal));
     essentia.setSignal(STFT_IMAGINARY, move(imaginarySignal));
+    essentia.setSignal(STFT_MAGNITUDE, move(magnitudeSignal));
 }
 
 float StftShaper::hammingWindow(int sampleNumber) const {

@@ -7,8 +7,8 @@ Shapery::Shapery(std::shared_ptr<SignalConduit> input, std::unique_ptr<impresari
         : input{move(input)},
         output{move(output)},
         shapers{} {
-    shapers.push_back(std::make_unique<Equalizer>());
     shapers.push_back(std::make_unique<StftShaper>());
+    shapers.push_back(std::make_unique<Equalizer>());
 }
 
 void Shapery::activate() {

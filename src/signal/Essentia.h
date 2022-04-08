@@ -7,14 +7,15 @@
 
 namespace analogorium {
 
-enum SignalFLavor {
+enum SignalFlavor {
     SEEDLING = 0,
-    EQUALIZED = 1,
-    STFT_REAL = 2,
-    STFT_IMAGINARY = 3,
+    STFT_REAL = 1,
+    STFT_IMAGINARY = 2,
+    STFT_MAGNITUDE = 3,
+    EQUALIZED = 4,
 
     // remember to update!
-    SIGNAL_FLAVOR_COUNT = 4
+    SIGNAL_FLAVOR_COUNT = 5
 };
 
 class Essentia : public impresarioUtils::NonCopyable {
@@ -24,9 +25,9 @@ private:
 public:
     Essentia();
 
-    void setSignal(SignalFLavor signalFlavor, std::unique_ptr<Signal> signal);
+    void setSignal(SignalFlavor signalFlavor, std::unique_ptr<Signal> signal);
 
-    std::shared_ptr<Signal> getSignal(SignalFLavor signalFlavor);
+    std::shared_ptr<Signal> getSignal(SignalFlavor signalFlavor);
 
     std::unique_ptr<flatbuffers::FlatBufferBuilder> serialize() const;
 };

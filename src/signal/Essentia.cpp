@@ -7,25 +7,17 @@ Essentia::Essentia()
     signals.resize(SIGNAL_FLAVOR_COUNT);
 }
 
-void Essentia::setSignal(SignalFLavor signalFlavor, std::unique_ptr<Signal> signal) {
+void Essentia::setSignal(SignalFlavor signalFlavor, std::unique_ptr<Signal> signal) {
     signals[signalFlavor] = move(signal);
 }
 
-std::shared_ptr<Signal> Essentia::getSignal(SignalFLavor signalFlavor) {
+std::shared_ptr<Signal> Essentia::getSignal(SignalFlavor signalFlavor) {
     return signals[signalFlavor];
 }
 
 std::unique_ptr<flatbuffers::FlatBufferBuilder> Essentia::serialize() const {
     auto builder = std::make_unique<flatbuffers::FlatBufferBuilder>();
-    auto stftRealPart = signals[STFT_REAL];
-    auto stftImaginaryPart = signals[STFT_IMAGINARY];
-    std::vector<float> stftMagnitude;
-    stftMagnitude.reserve(stftRealPart->size());
-    for (int index = 0; index < stftRealPart->size(); index++) {
-        stftMagnitude.push_back(static_cast<float>(std::sqrt(
-                std::pow(stftRealPart->getSample(index), 2) + std::pow(stftImaginaryPart->getSample(index), 2))));
-    }
-    auto signalOffset = builder->CreateVector(stftMagnitude);
+    auto signalOffset = builder->CreateVector(signals[EQUALIZED]->getVectorReference());
     auto serializedPacket = ImpresarioSerialization::CreateEssentia(*builder, signalOffset);
     builder->Finish(serializedPacket);
     return builder;

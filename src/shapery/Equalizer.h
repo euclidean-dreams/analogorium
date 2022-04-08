@@ -8,6 +8,8 @@ namespace analogorium {
 class Equalizer : public Shaper {
 public:
     float gain;
+    float sampleRate;
+    std::map<int, float> scalingFactors;
 
     Equalizer();
 
