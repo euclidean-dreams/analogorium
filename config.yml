@@ -1,4 +1,4 @@
-audio_device: "Scarlett 2i2 USB"
+audio_device: "Scarlett"
 #audio_device: "USB"
 ring_buffer_size_multiplier: 16
 sample_rate: 44100
