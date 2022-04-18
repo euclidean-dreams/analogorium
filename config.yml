@@ -1,5 +1,6 @@
 audio_device: "Scarlett"
 #audio_device: "USB"
+#audio_device: "Logitec"
 ring_buffer_size_multiplier: 16
 sample_rate: 44100
 seedling_signal_size: 128
@@ -14,11 +15,12 @@ window_size: 64
 
 # equalizer
 # scarlet mic
-gain: 10000
-# scarlet loopback
-#gain: 100
+#gain: 10000
 # usb loopback
-#gain: 1000
+#gain 1000
+# rockband!
+#gain: 100
+gain: 1
 scaling_factor_100: 1
 scaling_factor_200: 1
 scaling_factor_400: 1
