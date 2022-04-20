@@ -20,7 +20,7 @@ window_size: 64
 #gain 1000
 # rockband!
 #gain: 100
-gain: 0.5
+gain: 1.0
 scaling_factor_100: 1
 scaling_factor_200: 1
 scaling_factor_400: 1
