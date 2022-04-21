@@ -1,0 +1,70 @@
+/home/josiah/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/josiah/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/linux/ninja -G Ninja /home/josiah/projects/code/impresario-systems/analogorium
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/impresario-utils-download
+[1/7] Performing update step for 'impresario-utils'
+HEAD is now at e9154a8 fixed volitia percipient
+[2/7] No patch step for 'impresario-utils'
+[3/7] No configure step for 'impresario-utils'
+[4/7] No build step for 'impresario-utils'
+[5/7] No install step for 'impresario-utils'
+[6/7] No test step for 'impresario-utils'
+[7/7] Completed 'impresario-utils'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/impresario-serialization-download
+[1/7] Performing update step for 'impresario-serialization'
+HEAD is now at 250e6a7 addded stft
+[2/7] No patch step for 'impresario-serialization'
+[3/7] No configure step for 'impresario-serialization'
+[4/7] No build step for 'impresario-serialization'
+[5/7] No install step for 'impresario-serialization'
+[6/7] No test step for 'impresario-serialization'
+[7/7] Completed 'impresario-serialization'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/flatbuffers-download
+[1/7] Performing update step for 'flatbuffers'
+[2/7] No patch step for 'flatbuffers'
+[3/7] No configure step for 'flatbuffers'
+[4/7] No build step for 'flatbuffers'
+[5/7] No install step for 'flatbuffers'
+[6/7] No test step for 'flatbuffers'
+[7/7] Completed 'flatbuffers'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/yaml-download
+[1/7] Performing update step for 'yaml'
+[2/7] No patch step for 'yaml'
+[3/7] No configure step for 'yaml'
+[4/7] No build step for 'yaml'
+[5/7] No install step for 'yaml'
+[6/7] No test step for 'yaml'
+[7/7] Completed 'yaml'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/spdlog-download
+[1/7] Performing update step for 'spdlog'
+[2/7] No patch step for 'spdlog'
+[3/7] No configure step for 'spdlog'
+[4/7] No build step for 'spdlog'
+[5/7] No install step for 'spdlog'
+[6/7] No test step for 'spdlog'
+[7/7] Completed 'spdlog'
+-- Build spdlog: 1.9.2
+-- Build type: Debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug/mufft-download
+[1/7] Performing update step for 'mufft'
+[2/7] No patch step for 'mufft'
+[3/7] No configure step for 'mufft'
+[4/7] No build step for 'mufft'
+[5/7] No install step for 'mufft'
+[6/7] No test step for 'mufft'
+[7/7] Completed 'mufft'
+Processor: x86_64
+Enabling x86 SIMD support.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/josiah/projects/code/impresario-systems/analogorium/cmake-build-debug
