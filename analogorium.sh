@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./cmake-build-release/analogorium
+./cmake-build-release-local/analogorium
