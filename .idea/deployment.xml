@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="ambrose (600b804e-e260-49c8-a8cb-1c547965c114)">
+      <paths name="ambrose (6cea954e-3fe1-43e5-9be3-7f3908dfcb22)">
         <serverdata>
           <mappings>
             <mapping deploy="/root/analogorium" local="$PROJECT_DIR$" />
