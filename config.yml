@@ -7,11 +7,12 @@ seedling_signal_size: 128
 
 # endpoints
 output_endpoint: ipc:///tmp/analogorium
-volitia_endpoint: tcp://volitia:44440
+#output_endpoint: tcp://0.0.0.0:44447
+volitia_endpoint: tcp://10.0.0.85:44440
 
 # stft
-hop_size: 4
-window_size: 64
+hop_size: 1
+window_size: 32
 
 # equalizer
 # scarlet mic
@@ -21,10 +22,10 @@ window_size: 64
 # rockband!
 #gain: 100
 gain: 1.0
-scaling_factor_100: 1
-scaling_factor_200: 1
-scaling_factor_400: 1
-scaling_Factor_1000: 1
+scaling_factor_100: 0.7
+scaling_factor_200: 0.7
+scaling_factor_400: 0.7
+scaling_Factor_1000: 0.7
 scaling_factor_2000: 1
 scaling_factor_20000: 1
 

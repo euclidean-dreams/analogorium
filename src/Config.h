@@ -17,11 +17,11 @@
 #define WINDOW_FUNCTION impresarioUtils::Config::getInstance().getInt("window_function")
 
 // equalizer
-#define SCALING_FACTOR_100 impresarioUtils::Config::getInstance().getInt("scaling_factor_100")
-#define SCALING_FACTOR_200 impresarioUtils::Config::getInstance().getInt("scaling_factor_200")
-#define SCALING_FACTOR_400 impresarioUtils::Config::getInstance().getInt("scaling_factor_400")
-#define SCALING_FACTOR_1000 impresarioUtils::Config::getInstance().getInt("scaling_Factor_1000")
-#define SCALING_FACTOR_2000 impresarioUtils::Config::getInstance().getInt("scaling_factor_2000")
-#define SCALING_FACTOR_20000 impresarioUtils::Config::getInstance().getInt("scaling_factor_20000")
+#define SCALING_FACTOR_100 impresarioUtils::Config::getInstance().getFloat("scaling_factor_100")
+#define SCALING_FACTOR_200 impresarioUtils::Config::getInstance().getFloat("scaling_factor_200")
+#define SCALING_FACTOR_400 impresarioUtils::Config::getInstance().getFloat("scaling_factor_400")
+#define SCALING_FACTOR_1000 impresarioUtils::Config::getInstance().getFloat("scaling_Factor_1000")
+#define SCALING_FACTOR_2000 impresarioUtils::Config::getInstance().getFloat("scaling_factor_2000")
+#define SCALING_FACTOR_20000 impresarioUtils::Config::getInstance().getFloat("scaling_factor_20000")
 
 #endif //ANALOGORIUM_CONFIG_H
