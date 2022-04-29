@@ -22,10 +22,10 @@ window_size: 32
 # rockband!
 #gain: 100
 gain: 1.0
-scaling_factor_100: 0.7
-scaling_factor_200: 0.7
-scaling_factor_400: 0.7
-scaling_Factor_1000: 0.7
+scaling_factor_100: 1
+scaling_factor_200: 1
+scaling_factor_400: 1
+scaling_Factor_1000: 1
 scaling_factor_2000: 1
 scaling_factor_20000: 1
 
