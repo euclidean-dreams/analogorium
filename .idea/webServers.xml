@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7eae9f53-b9f4-44c4-b4bf-8e6b3c127ffd" name="clotho">
+        <fileTransfer accessType="SFTP" host="clotho-spring" port="44777" sshConfigId="a6213bd7-d28b-493e-bffa-438aecd6d795" sshConfig="clotho-spring" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

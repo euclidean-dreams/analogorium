@@ -1,4 +1,4 @@
-audio_device: "Scarlett"
+audio_device: "default"
 #audio_device: "USB"
 #audio_device: "Logitec"
 ring_buffer_size_multiplier: 16
@@ -6,8 +6,8 @@ sample_rate: 44100
 seedling_signal_size: 128
 
 # endpoints
-output_endpoint: ipc:///tmp/analogorium
-#output_endpoint: tcp://0.0.0.0:44447
+#output_endpoint: ipc:///tmp/analogorium
+output_endpoint: tcp://0.0.0.0:44441
 volitia_endpoint: tcp://10.0.0.85:44440
 
 # stft

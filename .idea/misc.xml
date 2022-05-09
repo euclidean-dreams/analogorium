@@ -8,11 +8,15 @@
     <excludeRoots>
       <file path="$PROJECT_DIR$/cmake-build-ambrose-release" />
       <file path="$PROJECT_DIR$/cmake-build-debug" />
+      <file path="$PROJECT_DIR$/cmake-build-debug-clotho-spring" />
       <file path="$PROJECT_DIR$/cmake-build-debug-local" />
+      <file path="$PROJECT_DIR$/cmake-build-debug-pi" />
       <file path="$PROJECT_DIR$/cmake-build-local-release" />
       <file path="$PROJECT_DIR$/cmake-build-release" />
       <file path="$PROJECT_DIR$/cmake-build-release-ambrose" />
+      <file path="$PROJECT_DIR$/cmake-build-release-clotho-spring" />
       <file path="$PROJECT_DIR$/cmake-build-release-local" />
+      <file path="$PROJECT_DIR$/cmake-build-release-pi" />
     </excludeRoots>
   </component>
 </project>
