@@ -1,7 +1,7 @@
 #ifndef ANALOGORIUM_EQUALIZER_H
 #define ANALOGORIUM_EQUALIZER_H
 
-#include "Shaper.h"
+#include "shapery/Shaper.h"
 
 namespace analogorium {
 

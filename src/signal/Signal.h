@@ -21,6 +21,8 @@ public:
 
     float getSample(int index);
 
+    void setSample(int index, float sample);
+
     void populate(float value);
 
     std::vector<float>::iterator begin();

@@ -4,7 +4,7 @@ namespace analogorium {
 
 Signal::Signal(int size)
         : maxSize{size},
-          samples{} {
+        samples{} {
     samples.reserve(size);
 }
 
@@ -31,6 +31,16 @@ float Signal::getSample(int index) {
         throw std::out_of_range("attempted to access an out of range sample on a signal");
     }
     return samples[index];
+}
+
+void Signal::setSample(int index, float sample) {
+    if (samples.size() < maxSize) {
+        throw std::runtime_error("attempted to use a signal that wasn't finalized");
+    }
+    if (index < 0 || index >= maxSize) {
+        throw std::out_of_range("attempted to access an out of range sample on a signal");
+    }
+    samples[index] = sample;
 }
 
 void Signal::populate(float value) {

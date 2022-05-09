@@ -13,9 +13,10 @@ enum SignalFlavor {
     STFT_IMAGINARY = 2,
     STFT_MAGNITUDE = 3,
     EQUALIZED = 4,
+    AUTO_GAIN = 5,
 
     // remember to update!
-    SIGNAL_FLAVOR_COUNT = 5
+    SIGNAL_FLAVOR_COUNT = 6
 };
 
 class Essentia : public impresarioUtils::NonCopyable {

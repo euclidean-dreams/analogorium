@@ -1,33 +1,16 @@
 audio_device: "default"
-#audio_device: "USB"
-#audio_device: "Logitec"
 ring_buffer_size_multiplier: 16
 sample_rate: 44100
 seedling_signal_size: 128
 
 # endpoints
-#output_endpoint: ipc:///tmp/analogorium
-output_endpoint: tcp://0.0.0.0:44441
+output_endpoint: ipc:///tmp/analogorium
+#output_endpoint: tcp://0.0.0.0:44441
 volitia_endpoint: tcp://10.0.0.85:44440
 
 # stft
 hop_size: 1
 window_size: 32
-
-# equalizer
-# scarlet mic
-#gain: 10000
-# usb loopback
-#gain 1000
-# rockband!
-#gain: 100
-gain: 1.0
-scaling_factor_100: 1
-scaling_factor_200: 1
-scaling_factor_400: 1
-scaling_Factor_1000: 1
-scaling_factor_2000: 1
-scaling_factor_20000: 1
 
 # 0 for hamming
 # 1 for hann

@@ -2,49 +2,18 @@
 <project version="4">
   <component name="PublishConfigData" serverName="clotho" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="ambrose (600b804e-e260-49c8-a8cb-1c547965c114)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/analogorium" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="clotho">
         <serverdata>
           <mappings>
             <mapping deploy="~/dev/analogorium" local="$PROJECT_DIR$" web="/" />
           </mappings>
-        </serverdata>
-      </paths>
-      <paths name="clotho-spring (368ef7e7-b87d-44c8-aeb5-fc000a79dddd)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/tmp/tmp.3UKMGxtji6" local="$PROJECT_DIR$" />
-          </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-pi" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-pi" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-local-release" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-clotho-spring" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-ambrose" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-clotho-spring" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-ambrose-release" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release" />
-          </excludedPaths>
-        </serverdata>
-      </paths>
-      <paths name="pi (6cea954e-3fe1-43e5-9be3-7f3908dfcb22)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/tmp/analogorium" local="$PROJECT_DIR$" />
-          </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-pi" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-pi" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-local-release" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-ambrose" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-local" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-ambrose-release" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
