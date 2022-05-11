@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 option(ARM "build for ARM instead of x86 architectures" OFF)
+option(EUCLID "build euclid" OFF)
 
 add_compile_options(-Wno-psabi)
 
