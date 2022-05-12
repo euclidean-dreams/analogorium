@@ -47,7 +47,22 @@ endif ()
 set(
         SOURCE_FILES
         src/Config.h
-        src/signal/Signal.cpp src/signal/Signal.h src/signal/Essentia.cpp src/signal/Essentia.h src/primordium/SignalConduit.h src/primordium/AudioDeviceSlinger.cpp src/primordium/AudioDeviceSlinger.h src/primordium/RingBuffer.cpp src/primordium/RingBuffer.h src/shapery/Shapery.cpp src/shapery/Shapery.h src/shapery/Shaper.h src/shapery/StftShaper.cpp src/shapery/StftShaper.h src/shapery/tabled/Equalizer.cpp src/shapery/tabled/Equalizer.h src/shapery/AutoGain.cpp src/shapery/AutoGain.h src/shapery/AutoBalance.cpp src/shapery/AutoBalance.h src/shapery/tabled/AutoEqualizer.cpp src/shapery/tabled/AutoEqualizer.h)
+
+        src/primordium/AudioDeviceSlinger.cpp src/primordium/AudioDeviceSlinger.h
+        src/primordium/RingBuffer.cpp src/primordium/RingBuffer.h
+        src/primordium/SignalConduit.h
+
+        src/signal/Signal.cpp src/signal/Signal.h
+        src/signal/Essentia.cpp src/signal/Essentia.h
+
+        src/shapery/Shaper.h
+        src/shapery/Shapery.cpp src/shapery/Shapery.h
+        src/shapery/StftShaper.cpp src/shapery/StftShaper.h
+        src/shapery/AutoGain.cpp src/shapery/AutoGain.h
+        src/shapery/AutoBalance.cpp src/shapery/AutoBalance.h
+
+        # unsorted
+)
 list(APPEND TARGETS analogorium)
 add_executable(analogorium src/main.cpp ${SOURCE_FILES})
 

@@ -3,7 +3,7 @@
 namespace analogorium {
 
 AutoGain::AutoGain() :
-        balancer{0, SEEDLING_SIGNAL_SIZE, 0.002} {
+        balancer{0, SEEDLING_SIGNAL_SIZE, GAIN_TARGET} {
 
 }
 

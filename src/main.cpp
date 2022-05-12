@@ -6,7 +6,7 @@
 namespace analogorium {
 
 int bootstrap() {
-    std::string configFilePath = "./config.yml";
+    std::string configFilePath = "./analogorium-config.yml";
     impresarioUtils::Bootstrapper bootstrapper(configFilePath, 1);
 
     // volitia percipient

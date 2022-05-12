@@ -1,7 +1,5 @@
 #include "Shapery.h"
-#include "shapery/tabled/Equalizer.h"
 #include "AutoGain.h"
-#include "shapery/tabled/AutoEqualizer.h"
 
 namespace analogorium {
 
