@@ -5,7 +5,7 @@ seedling_signal_size: 128
 gain_target: 0.002
 
 # endpoints
-output_endpoint: ipc://tmp/analogorium
+output_endpoint: ipc:///tmp/analogorium
 volitia_endpoint: tcp://volitia:44440
 
 # stft

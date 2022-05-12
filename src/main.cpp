@@ -5,8 +5,7 @@
 
 namespace analogorium {
 
-int bootstrap() {
-    std::string configFilePath = "./analogorium-config.yml";
+int bootstrap(std::string configFilePath) {
     impresarioUtils::Bootstrapper bootstrapper(configFilePath, 1);
 
     // volitia percipient
@@ -33,6 +32,14 @@ int bootstrap() {
 
 }
 
-int main() {
-    return analogorium::bootstrap();
+int main(int argc, char *argv[]) {
+    std::string configFilePath;
+    if (argc == 1) {
+        configFilePath = "./config.yml";
+    } else if (argc == 2) {
+        configFilePath = argv[1];
+    } else {
+        return 1;
+    }
+    return analogorium::bootstrap(configFilePath);
 }
