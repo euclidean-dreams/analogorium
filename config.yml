@@ -3,6 +3,7 @@ ring_buffer_size_multiplier: 16
 sample_rate: 44100
 seedling_signal_size: 128
 gain_target: 0.002
+autogain_history_size: 800
 
 # endpoints
 output_endpoint: ipc:///tmp/analogorium

@@ -12,7 +12,7 @@ AutoBalance::AutoBalance(
         ceilingTarget{target},
         gain{1},
         history{},
-        historySize{800} {
+        historySize{impresarioUtils::Config::getInstance().getInt("autogain_history_size")} {
 
 }
 
