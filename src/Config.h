@@ -5,7 +5,6 @@
 #define RING_BUFFER_SIZE_MULTIPLIER impresarioUtils::Config::getInstance().getInt("ring_buffer_size_multiplier")
 #define SAMPLE_RATE impresarioUtils::Config::getInstance().getFloat("sample_rate")
 #define SEEDLING_SIGNAL_SIZE impresarioUtils::Config::getInstance().getInt("seedling_signal_size")
-#define GAIN_TARGET impresarioUtils::Config::getInstance().getFloat("gain_target")
 
 // endpoints
 #define OUTPUT_ENDPOINT impresarioUtils::Config::getInstance().getString("output_endpoint")

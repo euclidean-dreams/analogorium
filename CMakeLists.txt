@@ -15,12 +15,6 @@ integrate_cmake_dependency(
         GIT_TAG origin/dev
 )
 
-integrate_cmake_dependency(
-        NAME portaudio
-        GIT_URL git@github.com:PortAudio/portaudio.git
-        GIT_TAG 147dd722548358763a8b649b3e4b41dfffbcfbb6
-)
-
 if (ARM)
     SET(GNULINUX_PLATFORM ON)
     SET(NE10_LINUX_TARGET_ARCH armv7)
@@ -58,7 +52,6 @@ set(
         src/shapery/Shaper.h
         src/shapery/Shapery.cpp src/shapery/Shapery.h
         src/shapery/StftShaper.cpp src/shapery/StftShaper.h
-        src/shapery/AutoGain.cpp src/shapery/AutoGain.h
         src/shapery/AutoBalance.cpp src/shapery/AutoBalance.h
 
         # unsorted

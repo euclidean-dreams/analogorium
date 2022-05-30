@@ -3,15 +3,16 @@
 
 #include <list>
 #include "signal/Signal.h"
+#include "Shaper.h"
 
 namespace analogorium {
 
-class AutoBalance {
+class AutoBalance : public Shaper {
 public:
     int signalStartIndex;
     int signalEndIndex;
     float ceilingTarget;
-    float gain;
+    float sampleMultiplier;
     std::list<float> history;
     int historySize;
 
@@ -22,6 +23,8 @@ public:
     );
 
     void balance(Signal &signal);
+
+    void shape(Essentia &essentia);
 };
 
 }

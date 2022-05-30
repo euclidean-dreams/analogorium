@@ -1,5 +1,5 @@
 #include "Shapery.h"
-#include "AutoGain.h"
+#include "AutoBalance.h"
 
 namespace analogorium {
 
@@ -7,7 +7,7 @@ Shapery::Shapery(std::shared_ptr<SignalConduit> input, std::unique_ptr<impresari
         : input{move(input)},
         output{move(output)},
         shapers{} {
-    shapers.push_back(std::make_unique<AutoGain>());
+    shapers.push_back(std::make_unique<AutoBalance>(0, SEEDLING_SIGNAL_SIZE, 1));
     shapers.push_back(std::make_unique<StftShaper>());
 }
 

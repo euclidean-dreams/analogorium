@@ -10,9 +10,9 @@ AutoBalance::AutoBalance(
         signalStartIndex{signalStartIndex},
         signalEndIndex{signalEndIndex},
         ceilingTarget{target},
-        gain{1},
+        sampleMultiplier{1},
         history{},
-        historySize{impresarioUtils::Config::getInstance().getInt("autogain_history_size")} {
+        historySize{impresarioUtils::Config::getInstance().getInt("autobalance_history_size")} {
 
 }
 
@@ -21,7 +21,7 @@ void AutoBalance::balance(Signal &signal) {
     for (int index = signalStartIndex; index < signalEndIndex; index++) {
         // balance sample in signal
         auto rawSample = signal.getSample(index);
-        auto sample = rawSample * gain;
+        auto sample = rawSample * sampleMultiplier;
         signal.setSample(index, sample);
 
         // update highest sample
@@ -42,14 +42,24 @@ void AutoBalance::balance(Signal &signal) {
     for (auto value: history) {
         sum += value;
     }
-    auto ceilingAverage = sum / history.size();
+    auto ceilingAverage = sum / static_cast<float>(history.size());
 
     if (ceilingAverage < ceilingTarget) {
-        gain += 0.0001;
-    } else if (ceilingAverage > ceilingTarget) {
-        gain -= 0.0001;
+        sampleMultiplier += 0.001 * std::abs(ceilingTarget - ceilingAverage);
+    } else if (ceilingAverage > ceilingTarget && sampleMultiplier > 0) {
+        sampleMultiplier -= 0.001 * std::abs(ceilingTarget - ceilingAverage);
     }
 
+}
+
+void AutoBalance::shape(Essentia &essentia) {
+    auto &inputSignal = *essentia.getSignal(SEEDLING);
+    auto outputSignal = std::make_unique<Signal>(inputSignal.size());
+    for (auto sample: inputSignal) {
+        outputSignal->addSample(sample);
+    }
+    balance(*outputSignal);
+    essentia.setSignal(AUTO_BALANCE, move(outputSignal));
 }
 
 }
