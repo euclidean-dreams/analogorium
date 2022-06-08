@@ -3,9 +3,13 @@ project(analogorium VERSION 0.1)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-option(ARM "build for ARM instead of x86 architectures" OFF)
+# turn one of these on
+option(_arm "build for arm" OFF)
+option(_arm64 "build for arm64" OFF)
+option(_x86 "build for x86" OFF)
 
 add_compile_options(-Wno-psabi)
+add_compile_options(-Wno-dev)
 
 include(lib/cmake-utils/dependency-integrator.cmake)
 
@@ -15,7 +19,7 @@ integrate_cmake_dependency(
         GIT_TAG origin/dev
 )
 
-if (ARM)
+if (_arm)
     SET(GNULINUX_PLATFORM ON)
     SET(NE10_LINUX_TARGET_ARCH armv7)
     set(CMAKE_POLICY_DEFAULT_CMP0048 NEW)
@@ -28,7 +32,22 @@ if (ARM)
             GIT_URL git@github.com:projectNe10/Ne10.git
             GIT_TAG 1f059a764d0e1bc2481c0055c0e71538470baa83
     )
-else ()
+endif ()
+if (_arm64)
+    SET(GNULINUX_PLATFORM ON)
+    SET(NE10_LINUX_TARGET_ARCH aarch64)
+    set(CMAKE_POLICY_DEFAULT_CMP0048 NEW)
+    SET(NE10_ENABLE_MATH OFF)
+    SET(NE10_ENABLE_PHYSICS OFF)
+    SET(NE10_ENABLE_IMGPROC OFF)
+    SET(NE10_BUILD_EXAMPLES OFF)
+    integrate_cmake_dependency(
+            NAME ne10
+            GIT_URL git@github.com:projectNe10/Ne10.git
+            GIT_TAG 1f059a764d0e1bc2481c0055c0e71538470baa83
+    )
+endif ()
+if (_x86)
     add_compile_definitions(USE_MUFFT)
     SET(MUFFT_ENABLE_FFTW OFF)
     integrate_cmake_dependency(
@@ -63,10 +82,11 @@ add_executable(analogorium src/main.cpp ${SOURCE_FILES})
 foreach (target IN LISTS TARGETS)
     target_include_directories(${target} PRIVATE src)
     target_link_libraries(${target} PRIVATE impresario-utils)
-    if (ARM)
+    if (_arm OR _arm64)
         target_include_directories(${target} PRIVATE ${CMAKE_BINARY_DIR}/ne10-src/inc)
         target_link_libraries(${target} PRIVATE NE10)
-    else ()
+    endif ()
+    if (_x86)
         target_link_libraries(${target} PRIVATE muFFT)
     endif ()
     target_link_libraries(${target} PRIVATE portaudio)

@@ -1,4 +1,4 @@
-audio_device: "default"
+audio_device: "USB"
 ring_buffer_size_multiplier: 16
 sample_rate: 44100
 seedling_signal_size: 128
