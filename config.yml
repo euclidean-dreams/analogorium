@@ -1,0 +1,16 @@
+audio_device: "default"
+ring_buffer_size_multiplier: 16
+sample_rate: 44100
+seedling_signal_size: 128
+autobalance_history_size: 10
+
+# endpoints
+output_endpoint: ipc:///tmp/analogorium
+volitia_endpoint: tcp://volitia:44440
+
+# stft
+hop_size: 1
+window_size: 32
+# 0 for hamming
+# 1 for hann
+window_function: 0
