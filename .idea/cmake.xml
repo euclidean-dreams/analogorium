@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="CMakeSharedSettings">
-    <configurations>
-      <configuration PROFILE_NAME="x86-ubuntu-release" ENABLED="true" GENERATION_DIR="build-x86-ubuntu-release" CONFIG_NAME="Release" GENERATION_OPTIONS="-D_x86=ON" />
-      <configuration PROFILE_NAME="arm-ubuntu-release" ENABLED="true" GENERATION_DIR="build-arm-ubuntu-release" CONFIG_NAME="Release" TOOLCHAIN_NAME="ambrose" GENERATION_OPTIONS="-D_arm=ON" />
-    </configurations>
-  </component>
-</project>
