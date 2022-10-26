@@ -39,7 +39,7 @@ void StftShaper::shape(Essentia &essentia) {
     if (inputSignals.size() < windowSize / hopSize) {
         // waiting to have enough seedlings to operate on
         // generate some null signals to allow future shapers to work
-        inputSignals.push_back(essentia.getSignal(AUTO_BALANCE));
+        inputSignals.push_back(essentia.getSignal(SEEDLING));
 
         auto realSignal = std::make_unique<Signal>(stftSize);
         realSignal->populate(0);
@@ -55,7 +55,7 @@ void StftShaper::shape(Essentia &essentia) {
         return;
     } else {
         inputSignals.pop_front();
-        inputSignals.push_back(essentia.getSignal(AUTO_BALANCE));
+        inputSignals.push_back(essentia.getSignal(SEEDLING));
     }
 
     // perform windowing
