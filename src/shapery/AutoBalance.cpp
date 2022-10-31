@@ -10,7 +10,7 @@ AutoBalance::AutoBalance(
         signalStartIndex{signalStartIndex},
         signalEndIndex{signalEndIndex},
         ceilingTarget{target},
-        sampleMultiplier{1},
+        sampleMultiplier{impresarioUtils::Config::getInstance().getInt("sample_multiplier")},
         history{},
         historySize{impresarioUtils::Config::getInstance().getInt("autobalance_history_size")} {
 
@@ -56,9 +56,9 @@ void AutoBalance::shape(Essentia &essentia) {
     auto &inputSignal = *essentia.getSignal(SEEDLING);
     auto outputSignal = std::make_unique<Signal>(inputSignal.size());
     for (auto sample: inputSignal) {
-        outputSignal->addSample(sample);
+        outputSignal->addSample(sample * sampleMultiplier);
     }
-    balance(*outputSignal);
+//    balance(*outputSignal);
     essentia.setSignal(AUTO_BALANCE, move(outputSignal));
 }
 
