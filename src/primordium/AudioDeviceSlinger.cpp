@@ -41,7 +41,8 @@ AudioDeviceSlinger::AudioDeviceSlinger()
             streamCallback,
             &(*outputStream)
     ));
-    PaAlsa_EnableRealtimeScheduling(inputStream, true);
+    // for linux devices
+    // PaAlsa_EnableRealtimeScheduling(inputStream, true);
     throwOnPortaudioError(Pa_StartStream(inputStream));
 }
 

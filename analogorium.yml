@@ -1,8 +1,9 @@
-audio_device: "default"
+audio_device: "MacBook Air Microphone"
 ring_buffer_size_multiplier: 16
 sample_rate: 44100
 seedling_signal_size: 128
 autobalance_history_size: 10
+sample_multiplier: 1.0
 
 # endpoints
 output_endpoint: ipc:///tmp/analogorium

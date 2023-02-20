@@ -9,14 +9,13 @@ option(_arm64 "build for arm64" OFF)
 option(_x86 "build for x86" OFF)
 
 add_compile_options(-Wno-psabi)
-add_compile_options(-Wno-dev)
 
 include(lib/cmake-utils/dependency-integrator.cmake)
 
 integrate_cmake_dependency(
         NAME impresario-utils
         GIT_URL git@github.com:impresario-systems/impresario-utils.git
-        GIT_TAG origin/dev
+        GIT_TAG origin/flow
 )
 
 if (_arm)
@@ -89,5 +88,6 @@ foreach (target IN LISTS TARGETS)
     if (_x86)
         target_link_libraries(${target} PRIVATE muFFT)
     endif ()
-    target_link_libraries(${target} PRIVATE portaudio)
+    target_include_directories(${target} PRIVATE /opt/homebrew/Cellar/portaudio/19.7.0/include)
+    target_link_libraries(${target} PRIVATE /opt/homebrew/Cellar/portaudio/19.7.0/lib/libportaudio.2.dylib)
 endforeach ()

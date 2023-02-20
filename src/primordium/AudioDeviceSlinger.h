@@ -3,7 +3,6 @@
 
 #include <ImpresarioUtils.h>
 #include <portaudio.h>
-#include <pa_linux_alsa.h>
 #include "RingBuffer.h"
 
 namespace analogorium {
