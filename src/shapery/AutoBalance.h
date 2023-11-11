@@ -22,7 +22,7 @@ public:
             float target
     );
 
-//    void balance(Signal &signal);
+    void balance(Signal &signal);
 
     void shape(Essentia &essentia);
 };
